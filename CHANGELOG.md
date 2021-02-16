@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Execute jest from node_modules/.bin when using npx
+
 ## [0.2.1] - 2021-02-16
 
 ### Fixed
 
-- Execute jest from node_modules/.bin
+- Attempt to execute jest from node_modules/.bin when using npx
 
 ## [0.2.0] - 2021-02-16
 

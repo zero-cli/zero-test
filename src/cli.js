@@ -5,6 +5,8 @@ const path = require("path");
 const [, , ...passthroughArgs] = process.argv;
 const config = `--config=${require.resolve("./zero-jest-config")}`;
 
-spawn(path.resolve("./node_modules/.bin/jest"), [config, ...passthroughArgs], {
-  stdio: "inherit",
-});
+spawn(
+  path.resolve(__dirname, "../node_modules/.bin/jest"),
+  [config, ...passthroughArgs],
+  { stdio: "inherit" }
+);
