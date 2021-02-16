@@ -2,8 +2,7 @@
   "private": true,
   "name": "@examples/typescript",
   "devDependencies": {
-    "@zero-cli/test": "file:../../zero-cli-test-0.0.39.tgz",
-    "@zero-cli/zero-test": "0.1.0"
+    "@zero-cli/zero-test": "file:../../zero-cli-zero-test-0.1.4.tgz"
   },
   "scripts": {
     "test": "zero-test"

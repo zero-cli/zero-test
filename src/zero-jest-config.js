@@ -2,8 +2,11 @@ const globby = require("globby");
 const importCwd = require("import-cwd");
 const tsconfig = require("./zero-tsconfig");
 
-const packageJson = importCwd.silent("./package.json");
 const rootDir = process.cwd();
+const packageJson = importCwd.silent("./package.json");
+
+let customJestConfig =
+  importCwd.silent("./jest.config.js") || packageJson?.jest || {};
 
 let testEnvironment = "node";
 if (packageJson?.dependencies?.react || packageJson?.devDependencies?.react) {
@@ -11,20 +14,22 @@ if (packageJson?.dependencies?.react || packageJson?.devDependencies?.react) {
 }
 
 module.exports = async () => {
+  if (typeof customJestConfig === "function") {
+    customJestConfig = await customJestConfig();
+  }
+
   const config = {
     rootDir,
     testEnvironment,
     errorOnDeprecated: true,
-    collectCoverageFrom: ["<rootDir>/src/**"],
-    watchPathIgnorePatterns: [
-      "<rootDir>/recordings",
-      "<rootDir>/the-recordings",
-    ],
+    ...customJestConfig,
   };
 
-  for await (const path of globby.stream("src/**/*.{ts,tsx}")) {
+  let options = { gitignore: true };
+  for await (const path of globby.stream("**/*.{ts,tsx}", options)) {
     config.preset = "ts-jest";
     config.globals = {
+      ...customJestConfig.globals,
       "ts-jest": { tsconfig },
     };
     break;

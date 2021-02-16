@@ -1,53 +1,13 @@
-pushd ./examples/commonjs
-yarn remove @zero-cli/zero-test
-popd
-
-pushd ./examples/esm
-yarn remove @zero-cli/zero-test
-popd
-
-pushd ./examples/react
-yarn remove @zero-cli/zero-test
-popd
-
-pushd ./examples/react-typescript
-yarn remove @zero-cli/zero-test
-popd
-
-pushd ./examples/typescript
-yarn remove @zero-cli/zero-test
-popd
-
-rm zero-cli-zero-test-0.0.*.tgz
+#! /bin/sh
+rm zero-cli-zero-test-*.*.*.tgz
 npm pack
-TGZ=../../$(ls zero-cli-zero-test-0.0.*.tgz)
+TGZ=../../$(ls zero-cli-zero-test-*.*.*.tgz)
+examples=("commonjs" "esm" "react" "react-typescript" "typescript")
 
-pushd ./examples/commonjs
-yarn add file:$TGZ --dev
-yarn jest --clear-cache
-yarn zero-test
-popd
-
-pushd ./examples/esm
-yarn add file:$TGZ --dev
-yarn jest --clear-cache
-yarn zero-test
-popd
-
-pushd ./examples/react
-yarn add file:$TGZ --dev
-yarn jest --clear-cache
-yarn zero-test
-popd
-
-pushd ./examples/react-typescript
-yarn add file:$TGZ --dev
-yarn jest --clear-cache
-yarn zero-test
-popd
-
-pushd ./examples/typescript
-yarn add file:$TGZ --dev
-yarn jest --clear-cache
-yarn zero-test
-popd
+for example in ${examples[@]}; do
+  pushd ./examples/$example
+  yarn add file:$TGZ --dev
+  yarn jest --clear-cache
+  yarn zero-test
+  popd
+done
