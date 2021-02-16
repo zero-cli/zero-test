@@ -1254,9 +1254,10 @@
     ts-jest "26.5.1"
     typescript "4.1.5"
 
-"@zero-cli/zero-test@file:../../zero-cli-zero-test-0.0.49.tgz":
-  version "0.0.49"
-  resolved "file:../../zero-cli-zero-test-0.0.49.tgz#2b7238c89bc0069bec9eb4f33012efc4a2f5253a"
+"@zero-cli/zero-test@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@zero-cli/zero-test/-/zero-test-0.1.0.tgz#f742432e8a4b5d023c187997b0792a095763679c"
+  integrity sha512-Xtbgt70lFuI92TN2NH2/O3QUpvmnUgCR0/ZnTpiMujc5vmxL13mL9n0ADbHbdRcjK1kO+3vnHD1lPAbuADjpCw==
   dependencies:
     "@babel/core" "7.12.16"
     "@babel/preset-env" "7.12.16"

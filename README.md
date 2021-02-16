@@ -45,6 +45,8 @@ Supports ES modules, React and/or TypeScript.
 
 ✨ **No Babel config or TypeScript config necessary.**
 
+[See examples](https://github.com/zero-cli/zero-test/tree/main/examples)
+
 ## License
 
 MIT © Brent Mealhouse
