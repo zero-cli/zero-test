@@ -41,7 +41,9 @@ npm i @zero-cli/zero-test --save-dev
 
 Write code, add tests, and run `zero-test`.
 
-**No Babel config or TypeScript config necessary.** Supports ES modules, React and/or TypeScript.
+Supports ES modules, React and/or TypeScript.
+
+✨ **No Babel config or TypeScript config necessary.**
 
 ## License
 
