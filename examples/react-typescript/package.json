@@ -9,7 +9,7 @@
     "@testing-library/jest-dom": "5.11.9",
     "@testing-library/react": "11.2.5",
     "@types/react": "17.0.2",
-    "@zero-cli/zero-test": "0.2.0"
+    "@zero-cli/zero-test": "file:../../zero-cli-zero-test-0.2.2.tgz"
   },
   "scripts": {
     "test": "zero-test"
