@@ -1272,10 +1272,10 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@zero-cli/zero-test@0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@zero-cli/zero-test/-/zero-test-0.2.2.tgz#befcaf7d1b17c21709c0850ee071e89fd27a7ba8"
-  integrity sha512-tlAlkKNzGCaf7iYggC71Qx8kqT+ehawTOFvvrCeN4dLWfHPwSZhRcLEaG2g4F8bUZI3nj8iYgbWGOddjPBC1UA==
+"@zero-cli/zero-test@0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@zero-cli/zero-test/-/zero-test-0.2.3.tgz#bd5841088dbfcbd074700118e1cf3568b60446e3"
+  integrity sha512-WdVyy7qoPqL78az3JraLY4UtvXoXEDWTT8pXeexv3H7Y6drSYSZ/uvtyTDK6VGx7DS9l2gtgD+9OpCc/kOv07Q==
   dependencies:
     "@babel/core" "7.12.16"
     "@babel/preset-env" "7.12.16"
