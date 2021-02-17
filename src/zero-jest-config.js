@@ -1,3 +1,4 @@
+const path = require("path");
 const globby = require("globby");
 const importCwd = require("import-cwd");
 const tsconfig = require("./zero-tsconfig");
@@ -26,8 +27,8 @@ module.exports = async () => {
   };
 
   let options = { gitignore: true };
-  for await (const path of globby.stream("**/*.{ts,tsx}", options)) {
-    config.preset = "ts-jest";
+  for await (const filepath of globby.stream("**/*.{ts,tsx}", options)) {
+    config.preset = path.resolve("./node_modules/ts-jest");
     config.globals = {
       ...customJestConfig.globals,
       "ts-jest": { tsconfig },

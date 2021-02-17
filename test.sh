@@ -3,10 +3,10 @@ rm zero-cli-zero-test-*.*.*.tgz
 npm pack
 TGZ=../../$(ls zero-cli-zero-test-*.*.*.tgz)
 
-for example in $(ls ./examples); do
-  pushd ./examples/$example
+for examplePath in examples/*/ ; do
+  pushd $examplePath
   yarn add file:$TGZ --dev
   yarn jest --clear-cache
-  yarn zero-test
+  yarn test
   popd
 done
