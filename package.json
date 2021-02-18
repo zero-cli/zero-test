@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@zero-cli/zero-test",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Run tests in any project with ZERO config",
   "author": "Brent Mealhouse <bmealhouse@gmail.com>",
   "license": "MIT",
