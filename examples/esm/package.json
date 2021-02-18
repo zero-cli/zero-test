@@ -2,7 +2,7 @@
   "private": true,
   "name": "@examples/esm",
   "devDependencies": {
-    "@zero-cli/zero-test": "0.2.3"
+    "@zero-cli/zero-test": "0.3.0"
   },
   "scripts": {
     "test": "zero-test"
