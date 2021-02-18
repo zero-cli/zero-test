@@ -6,7 +6,7 @@
   "author": "Brent Mealhouse <bmealhouse@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=14"
+    "node": ">=10"
   },
   "bin": {
     "zero-test": "./src/cli.js"

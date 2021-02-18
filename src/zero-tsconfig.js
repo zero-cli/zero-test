@@ -1,10 +1,17 @@
 const importCwd = require("import-cwd");
 
-const packageJson = importCwd.silent("./package.json");
+const packageJson = importCwd.silent("./package.json") || {};
 
 let jsx = "react";
-if (packageJson?.dependencies?.next || packageJson?.devDependencies?.next) {
-  jsx = "preserve";
+if (packageJson.dependencies) {
+  if (packageJson.dependencies.next) {
+    jsx = "preserve";
+  }
+}
+if (packageJson.devDependencies) {
+  if (packageJson.devDependencies.next) {
+    jsx = "preserve";
+  }
 }
 
 module.exports = {

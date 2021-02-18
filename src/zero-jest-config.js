@@ -4,14 +4,21 @@ const importCwd = require("import-cwd");
 const tsconfig = require("./zero-tsconfig");
 
 const rootDir = process.cwd();
-const packageJson = importCwd.silent("./package.json");
+const packageJson = importCwd.silent("./package.json") || {};
 
 let customJestConfig =
-  importCwd.silent("./jest.config.js") || packageJson?.jest || {};
+  importCwd.silent("./jest.config.js") || packageJson.jest || {};
 
 let testEnvironment = "node";
-if (packageJson?.dependencies?.react || packageJson?.devDependencies?.react) {
-  testEnvironment = "jsdom";
+if (packageJson.dependencies) {
+  if (packageJson.dependencies.react) {
+    testEnvironment = "jsdom";
+  }
+}
+if (packageJson.devDependencies) {
+  if (packageJson.devDependencies.react) {
+    testEnvironment = "jsdom";
+  }
 }
 
 module.exports = async () => {
